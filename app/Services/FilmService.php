@@ -43,7 +43,7 @@ class FilmService implements FilmServiceInterface
         $foundedFilm->plot = $apiFilm['Plot'];
         $foundedFilm->poster = $apiFilm['Poster'];
         $foundedFilm->actors = json_encode(explode(',', $apiFilm['Actors']));
-        $foundedFilm->imdb_id = $apiFilm['imdb_id'];
+        $foundedFilm->imdb_id = $apiFilm['imdbID'];
         $foundedFilm->save();
 
         return $foundedFilm;

@@ -12,5 +12,6 @@ class FilmController extends Controller
 
         //dd($request->get('title'));
         $film = $filmService->getFilm($request->get('title'));
+        return view('result', compact('film'));
     }
 }
