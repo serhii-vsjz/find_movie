@@ -32,8 +32,21 @@ class FilmService implements FilmServiceInterface
         {
             return $film;
         }
+
         $apiFilm = $this->getApiFilm($title);
-        dd($apiFilm);
+        $foundedFilm = new Film();
+        $foundedFilm->title = $apiFilm['Title'];
+        $foundedFilm->year = $apiFilm['Year'];
+        $foundedFilm->genre = json_encode(explode(',', $apiFilm['Genre']));
+        $foundedFilm->director = $apiFilm['Director'];
+        $foundedFilm->runtime = $apiFilm['Runtime'];
+        $foundedFilm->plot = $apiFilm['Plot'];
+        $foundedFilm->poster = $apiFilm['Poster'];
+        $foundedFilm->actors = json_encode(explode(',', $apiFilm['Actors']));
+        $foundedFilm->imdb_id = $apiFilm['imdb_id'];
+        $foundedFilm->save();
+
+        return $foundedFilm;
     }
 
     /**
