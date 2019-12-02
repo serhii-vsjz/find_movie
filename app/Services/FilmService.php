@@ -66,11 +66,12 @@ class FilmService implements FilmServiceInterface
                 ]
             ]
         );
-        if (!$request->getStatusCode() ==  Response::HTTP_OK) {
+        $response = json_decode($request->getBody()->getContents(), true);
+
+        if ($response['Response'] === 'False') {
             throw new \Exception('Film not found');
         }
-        $response = $request->getBody()->getContents();
-        return json_decode($response, true);
+        return $response;
     }
 }
 

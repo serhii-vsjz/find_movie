@@ -1,7 +1,7 @@
 <ul>
-    <li></li><p>{{ $film->title }}</p></li>
-    <li> <p>{{ $film->year }}</p></li>
-    <li>  <p>{{ $film->plot }}</p></li>
+    <h2>{{ $film->title }}</h2>
+    <p>{{ $film->year }}</p>
+    <p>{{ $film->plot }}</p>
     <img src="{{ $film->poster }}"/>
     <ul>
     @foreach(json_decode($film->actors) as $actor)
