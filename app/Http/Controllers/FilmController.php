@@ -9,6 +9,8 @@ class FilmController extends Controller
 {
     public function search(Request $request, FilmServiceInterface $filmService)
     {
-       $film = $filmService->getFilm($request->get('title'));
+
+        //dd($request->get('title'));
+        $film = $filmService->getFilm($request->get('title'));
     }
 }

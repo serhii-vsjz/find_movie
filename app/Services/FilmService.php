@@ -5,7 +5,8 @@ namespace App\Services;
 
 use App\Film;
 use GuzzleHttp\Client;
-use http\Env\Response;
+use Illuminate\Http\Response;
+
 
 class FilmService implements FilmServiceInterface
 {
@@ -52,8 +53,7 @@ class FilmService implements FilmServiceInterface
                 ]
             ]
         );
-
-        if ($request->getStatusCode() == Response::HTTP_OK) {
+        if (!$request->getStatusCode() ==  Response::HTTP_OK) {
             throw new \Exception('Film not found');
         }
         $response = $request->getBody()->getContents();

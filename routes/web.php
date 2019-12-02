@@ -12,9 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('search');
 });
 
 Route::get('/search', function () {
     return view('search');
 });
+
+Route::post('/search', 'FilmController@search')->name('search');
