@@ -11,12 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('search');
+Route::get('/', 'FilmController@index');
+Route::get('/vue', function ()
+{
+   return view('vue');
 });
-
-Route::get('/search', function () {
-    return view('search');
-});
+Route::get('/search', 'FilmController@index');
 
 Route::post('/search', 'FilmController@search')->name('search');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
