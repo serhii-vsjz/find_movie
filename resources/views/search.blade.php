@@ -10,5 +10,6 @@
         <input type="submit" value="search"/>
     </form>
     <example-component id="app"></example-component>
+    <prop-component v-bind:urldata="{{ json_encode($films) }}"></prop-component>
 
 @endsection
