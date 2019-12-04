@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div v-for="url in urldata">
-                    <img class="img" :src="url.poster">
+                    <img class="img" v-bind:src="url.poster">
                 </div>
             </div>
         </div>
@@ -15,21 +15,15 @@
         props: [
             'urldata',
         ],
-        mounted() {
 
-            this.update();
-        },
-        methods: {
-            update: function() {
-                console.log(this.urldata);
-            }
-        }
     }
 </script>
 
 <style>
     .container img  {
         float: left;
+        border: solid grey 1px;
         height: 250px;
+        margin-left: 2px;
     }
 </style>

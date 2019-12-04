@@ -6,17 +6,33 @@
     <div class="sample">
         <form action="{{ route('search') }}" method="post">
             @csrf
-            <input class="input-lg" type="text" name="title" placeholder="The Matrix"/>
-            <button class="btn btn-primary" type="submit">search</button>
+            <input class="form-control" type="text" name="title"/>
+            <br>
+            <button class="btn btn-success" type="submit">search</button>
+
         </form>
-        <prop-component id="gallery" v-bind:urldata="{{ json_encode($films) }}"></prop-component>
+        <gallery-component id="gallery" v-bind:urldata="{{ json_encode($films) }}"></gallery-component>
     </div>
 </div>
 <style>
-    .sample {
-        width: 90%;
-        align-content: center;
+    .wrapper {
+        margin: auto;
+
     }
+    .form-control {
+        margin: 10px auto 0px;
+    }
+    .sample {
+
+    }
+    .sample input {
+        width: 30%;
+        border-radius: 10px;
+    }
+    .sample button {
+        margin-bottom: 30px;
+    }
+
 </style>
 
 @endsection

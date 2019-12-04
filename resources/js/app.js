@@ -20,7 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('prop-component', require('./components/PropComponent.vue').default);
+Vue.component('gallery-component', require('./components/GalleryComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -28,9 +28,9 @@ Vue.component('prop-component', require('./components/PropComponent.vue').defaul
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+/*const app = new Vue({
     el: '#app',
-});
+});*/
 
 let gallery = new Vue({
    el: '#gallery'
