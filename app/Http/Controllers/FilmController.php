@@ -12,7 +12,6 @@ class FilmController extends Controller
     {
         $films = Film::all();
        // dd($films);
-        //dd(json_encode($films));
         return view('search', compact('films'));
     }
     public function search(Request $request, FilmServiceInterface $filmService)
